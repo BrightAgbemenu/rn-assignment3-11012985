@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Image, ScrollView, TouchableOpacity } from 'react-native';
 
 export default function App() {
   return (
@@ -14,6 +14,13 @@ export default function App() {
             source={require('./assets/Profile.png')}
             style={styles.profileIcon}
           />
+        </TouchableOpacity>
+      </View>
+
+      <View style={styles.searchContainer}>
+        <TextInput style={styles.searchInput} placeholder="Search" />
+        <TouchableOpacity style={styles.filterButton}>
+          <Image source={require('./assets/Filter.jpg')} style={styles.filterIcon} />
         </TouchableOpacity>
       </View>
     </ScrollView>
@@ -57,5 +64,28 @@ const styles = StyleSheet.create({
     padding: 12,
     backgroundColor: '#F5F5F5',
     borderRadius: 25,
+  },
+  searchContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 15,
+    backgroundColor: '#f5f5f5',
+    borderRadius: 20,
+    marginBottom: 20,
+    paddingHorizontal: 15,
+  },
+  searchInput: {
+    flex: 2,
+    height: 50,
+    paddingHorizontal: 15,
+    backgroundColor: '#F5F5F5',
+    borderRadius: 25,
+    borderWidth: 1,
+    borderColor: '#FFF',
+    fontSize: 18,
+  },
+  filterIcon: {
+    width: 24,
+    height: 24,
   },
 });
